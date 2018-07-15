@@ -15,7 +15,6 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "import-spacing": true,
@@ -124,7 +123,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "", //geen prefix verplicht: standard 'app' -prefix
       "kebab-case"
     ],
     "angular-whitespace": [true, "check-interpolation"],

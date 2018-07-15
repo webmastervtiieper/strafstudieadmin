@@ -1,0 +1,36 @@
+<!--Template voor bewerking-->
+<div mat-dialog-title>
+
+  <div fxLayout="row">
+    <div fxFlex="32px">
+      <mat-icon>{{dialogTitleIconName}}</mat-icon>
+    </div>
+    <div fxFlex class="mat-title">
+      {{dialogTitle}}
+    </div>
+    <div fxFlex="200px" class="mat-title" style="text-align:right">
+      {{dialogTitleExtraText}}
+    </div>
+  </div>
+</div>
+
+<mat-dialog-content class="pad">
+  <ng-content></ng-content>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <div fxFlex="50px" *ngIf="savePending">
+      <mat-progress-bar fxFlex mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div fxFlex></div>
+    <button mat-button #btnClose (click)="btnClose_clicked()"  [disabled]="savePending">
+      <mat-icon class="mat-18 td-expansion-primary" >close</mat-icon> 
+      <span class="td-expansion-primary">Sluiten</span>
+    </button>
+    <button mat-button #btnSave (click)="btnSave_clicked()" [disabled]="savePending" >
+      <mat-icon class="mat-18 td-expansion-primary" >save</mat-icon> 
+      <span class="td-expansion-primary">Bewaren</span>
+    </button>
+  </div>
+</mat-dialog-actions>

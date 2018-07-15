@@ -1,0 +1,1 @@
+export enum SmartschoolBasisRol  {leerling, leerkracht, directie, andere}

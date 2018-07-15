@@ -1,0 +1,36 @@
+<!--<div fxLayout="row">
+  <div fxFlex></div>
+  <div fxFlex.gt-sm="900px" fxFlex="95%">
+    <status-visualizer [statusText]="dataLoaderStatus" [hide]="allDataLoaded" [loaderTitle]="loaderTitle"></status-visualizer>
+  </div>
+  <div fxFlex></div>
+</div>-->
+
+<!--
+<div style="height:100%;width:100%;margin:auto;" *ngIf="!dataInitReady">
+  <div style="position:absolute;top:50%;left:50%; transform: translate(-50%,-50%); text-align:center;color:black">
+    <h3>gegevens laden, dit kan even duren...</h3>
+    <progress-bar></progress-bar>
+  </div>
+</div>-->
+
+<page-template-td-nav-layout [pageTitle]="pageTitle"> <!--[hidden]="!dataInitReady"-->
+  start page - dashboard component
+</page-template-td-nav-layout>
+<!--
+<div *ngIf="allDataLoaded" fxLayout="row">
+  <div fxFlex></div>
+  <div fxFlex.gt-sm="900px" fxFlex="95%">
+    <div [fxFlex]="fxFlexValue" *ngFor="let link of links" (click)="navigateTo('link')">
+      <md-card>
+        <md-card-header>
+
+          <md-card-title innerHtml="link.titel"></md-card-title>
+        </md-card-header>
+        <img mdCardImage [src]="link.cardImage"/>
+      </md-card>
+    </div>
+  </div>
+  <div fxFlex></div>
+</div>-->
+

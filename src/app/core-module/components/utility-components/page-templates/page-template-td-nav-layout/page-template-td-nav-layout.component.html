@@ -1,0 +1,28 @@
+<progress-bar></progress-bar>
+<td-layout-nav #tdLayoutNav [toolbarTitle]="toolbarTitle">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+          <mat-icon>menu</mat-icon>
+    </button>
+
+    <div td-toolbar-content fxFlex fxLayout="row" fxLayoutAlign="end center">
+        <button #btnAccount mat-icon-button (click)="btnAccount_clicked()">
+            <mat-icon class="mat-24">person</mat-icon>
+         </button>
+         <button  #btnLogout mat-icon-button  (click)="btnLogout_clicked()">
+             <mat-icon class="mat-24">exit_to_app</mat-icon>
+         </button>
+    </div>
+   
+  <div fxLayout="row">
+    <div  fxFlex> <!--fxFlex.gt-md="1250px"-->
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <td-layout-footer>
+    <div fxLayout="row" layout-align="start center">
+      <span class="md-caption">Copyright {{firmaNaam}}</span>
+      <span fxFlex></span>
+    </div>
+  </td-layout-footer>
+</td-layout-nav>

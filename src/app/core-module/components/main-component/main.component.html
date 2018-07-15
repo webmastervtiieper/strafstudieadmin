@@ -1,0 +1,38 @@
+<!-- pagina die teradata side menu genereerd - container voor de router : router-outlet -->
+<td-layout #mainLayout>
+  <td-navigation-drawer #mainDrawer flex [sidenavTitle]="sideNavTitle" [logo]="logo" [icon]="iconname" [name]="userNickname">
+
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/start']" (click)="mainLayout.close()">
+        <mat-icon class="mat-18">home</mat-icon>
+        <span>Home</span>
+      </a>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="menuItems">
+        <a mat-list-item [routerLink]="[item.route]" (click)="mainLayout.close()">
+          <mat-icon>{{item.icon}}</mat-icon>
+          <span>{{item.title}}</span>
+        </a>
+      </ng-template>
+    </mat-nav-list>
+
+    <mat-nav-list td-navigation-drawer-menu>
+      <a mat-list-item (click)="menuAccount_clicked()">
+        <mat-icon>account_box</mat-icon>
+        <span>Gebruikersgegevens</span>
+      </a>
+      <a mat-list-item (click)="menuLogout_clicked()">
+        <mat-icon class="mat-18">exit_to_app</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+
+  </td-navigation-drawer>
+
+  <router-outlet>
+  </router-outlet>
+
+</td-layout>
+
+<!--wordt gebruikt om keuzelijsten in float over modus te tonen; zoals een side menu
+<side-float-over></side-float-over>-->
+

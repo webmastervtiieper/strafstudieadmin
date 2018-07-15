@@ -1,0 +1,22 @@
+<div *ngIf="!hide" #progressbarContainer id="progressbarContainer" class="full">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{loaderTitle}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="center">
+        <mat-progress-bar [mode]="mode"></mat-progress-bar>
+      </div>
+      <mat-list dense>
+        <mat-list-item *ngFor="let l of statusText" [ngClass]="{ 'red' : l.hasError, 'green' : l.loaded }">
+          <h3 mat-line>
+            {{l.title}}
+          </h3>
+          <mat-icon [ngClass]="{ 'red' : l.hasError, 'green' : l.loaded }" *ngIf="l.loaded"  class="mat-24">check</mat-icon>
+          <mat-icon [ngClass]="{ 'red' : l.hasError, 'green' : l.loaded }" *ngIf="l.hasError" class="mat-24">error_outline</mat-icon>
+          <p mat-line>{{l.statusText}}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

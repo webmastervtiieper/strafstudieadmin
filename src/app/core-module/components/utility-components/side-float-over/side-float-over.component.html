@@ -1,0 +1,8 @@
+<div #sidePanelContainer class="mat-sidenav-container">
+  <mat-sidenav-container style="width: 100%;height: 100%;background: transparent;">
+    <mat-sidenav #sidePanel (close)="onPanelClose()" (open)="onPanelOpen()">
+      <progress-bar></progress-bar>
+      <ng-container #componentContainer></ng-container>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
